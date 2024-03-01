@@ -1,8 +1,8 @@
 ## Kubenetes demo APP
 This is 3 tier APP
-frontend: React
-Backend: Node
-Database Mongodb
+- frontend: React
+- Backend: Node
+- Database: Mongodb
 Deployment in Kubernetes (AKS)
 
 Task breakdown:
