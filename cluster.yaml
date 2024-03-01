@@ -1,0 +1,30 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: demo-tree
+  region: us-east-1
+
+vpc:
+  subnets:
+    private:
+      us-east-1a: { id: subnet-0208aa50d62d99317 }
+      us-east-1c: { id: subnet-0fdc13e65cc171b40 }
+      us-east-1b: { id: subnet-03d1b8bd521fcc838 }
+
+nodeGroups:
+  - name: ng-1-workers
+    labels: { role: workers }
+    instanceType: t2.medium
+    amiFamily: Ubuntu2204
+    desiredCapacity: 1
+    privateNetworking: true
+  - name: ng-1-builders
+    labels: { role: builders }
+    instanceType: t2.medium
+    amiFamily: Ubuntu2204
+    desiredCapacity: 1
+    privateNetworking: true
+    iam:
+      withAddonPolicies:
+        imageBuilder: true

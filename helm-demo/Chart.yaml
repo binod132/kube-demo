@@ -1,0 +1,17 @@
+apiVersion: v2
+name: demo-app
+version: 0.0.3
+appVersion: 0.0.1
+dependencies:
+  - alias: backend
+    name: backend-template
+    version: "0.0.3"
+    repository: file://charts/backend
+  - alias: database
+    name: database-template
+    version: "0.0.3"
+    repository: file://charts/database
+  - alias: frontend
+    name: frontend-template
+    version: "0.0.3"
+    repository: file://charts/frontend

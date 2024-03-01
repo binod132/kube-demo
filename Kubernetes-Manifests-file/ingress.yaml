@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: mainlb
-  namespace: three-tier
+  namespace: workshop
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
@@ -10,8 +10,8 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-    - host: backend.amanpathakdevops.study
-      http:
+    - host: a4357803b8e7b47f38d7f5cefa363bfa-654308180.us-east-1.elb.amazonaws.com
+      http: 
         paths:
           - path: /api
             pathType: Prefix
