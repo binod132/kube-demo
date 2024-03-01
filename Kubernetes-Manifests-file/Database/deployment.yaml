@@ -26,6 +26,14 @@ spec:
             - "0.0.0.0"
         ports:
         - containerPort: 27017
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 27017
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 27017
         env: 
           - name: MONGO_INITDB_ROOT_USERNAME
             valueFrom:
